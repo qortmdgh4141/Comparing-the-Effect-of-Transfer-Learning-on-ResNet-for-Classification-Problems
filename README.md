@@ -267,7 +267,7 @@
   ```
   <br/> 
   
-### 5. &nbsp; Training and Testing CNN Model <br/><br/>
+### 4. &nbsp; Training and Testing CNN Model <br/><br/>
 
 - _Optimized MLP Model_
 
@@ -360,12 +360,10 @@
   cnn_crosstab
   ```
   <br/> 
-  
+
 ### 5. &nbsp; Research Results  <br/><br/>
     
-- _The objective of this study was to train MLP-based and CNN-based models using the Fashion-MNIST dataset and compare their classification performance._ <br/> 
-
-- _The graph below shows the change in both Loss and Accuracy with increasing Epochs during the training process of both the MLP-based and CNN-based models._ <br/> <br/> 
+- _The objective of this study was to compare the classification performance between the Original-ResNet50 model and the TL-ResNet-50 model with transfer learning (TL) technique applied, using the AI-Hub Korean face image dataset for estimating person's age._ <br/> <br/> 
   
   ```
   def plot_loss_and_accuracy(train_loss, val_loss, train_acc, val_acc, model_name):
@@ -406,11 +404,9 @@
   
   <img src="https://github.com/qortmdgh4141/Comparing-Performance-of-MLP-and-CNN-for-Classification-Problem/blob/main/image/line_graph.png?raw=true">
 
-- _In the MLP model, a slight overfitting phenomenon was observed. This indicates that the MLP model might be overly fitted to the training data, leading to a decrease in generalization performance on new data._ <br/>
+- _Analyzing the "Training Loss" graph, we observe that the Original-ResNet50 model experiences underfitting from the 2nd epoch onwards, with the loss value not decreasing gradually. In contrast, the TF-ResNet50 model consistently exhibits a gradual decrease in the loss value even after the 2nd epoch. Moreover, starting from the 1st epoch, the TF-ResNet50 model, which utilizes the pre-trained model's weights as initial values, outputs significantly lower loss values compared to the Original-ResNet50 model._ <br/>
  
-- _In contrast, examining the change in Loss in the graph for the CNN model shows no occurrence of overfitting. This suggests that the CNN model effectively learns the local structure and features of images compared to the MLP model, demonstrating better generalization capability on new data._ <br/>
-
-- _Furthermore, the CNN model exhibited a very fast convergence rate and high accuracy. Due to its specialized architecture for image processing, the CNN model was able to better capture the visual features of images and was more suitable for the classification task, surpassing the convergence rate and accuracy of the MLP model._ <br/><br/> 
+- _The superiority of the TF-ResNet model is also evident in the "Accuracy on Validation Data" graph, where the TF-ResNet50 model consistently achieves considerably higher accuracy values than the Original-ResNet50 model across all epochs. Notably, there is a substantial difference in accuracy values between the two models, particularly when reaching the final 10th epoch._ <br/><br/> 
 
   ```
   def gradientbars(bars, cmap_list):
@@ -449,11 +445,7 @@
   
   <img src="https://github.com/qortmdgh4141/Comparing-Performance-of-MLP-and-CNN-for-Classification-Problem/blob/main/image/horizontal_bar_graph.png?raw=true">
   
-- _Next, comparing the misclassification frequencies of the MLP and CNN models on the actual test data, the MLP model had 544 misclassifications, while the CNN model had 385 misclassifications. This indicates that the CNN model correctly predicted about 200 more answers compared to the MLP model._ <br/>
- 
-- _This result clearly demonstrates the performance difference between MLP and CNN models, proving that CNN models are more suitable and show superior performance in fashion item image classification tasks._ <br/>
-
-- _Additionally, despite its complex model structure, the CNN model did not experience overfitting and demonstrated better generalization capability. This indicates that the possibility of overfitting in deep learning training is not determined solely by the number of training parameters, but also by the model structure._<br/> <br/> <br/>
+- _Finally, I compared the accuracy values of the two models on real test data and found that the TF-ResNet model has about 2x higher accuracy than the Original-ResNet50 model. These results prove that models using transfer learning perform better when training with small datasets and a limited number of epochs._ <br/> <br/> <br/>
  
 --------------------------
 ### 💻 S/W Development Environment
