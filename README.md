@@ -17,65 +17,24 @@
 
 ### 2. &nbsp; Key Components of the Neural Network Model and Experimental Settings  <br/><br/>
 
-- _Convolutional Layer_<br/>
+- _Class labels_<br/>
 
-  - _Number of filters : (32 or 64)  /  Kernel size: (3 x 3)._ <br/>
+  - _[0-6 years old,  7-12 years old, 13-19 years old, 20-30 years old, 31-45 years old, 46-55 years old, 56-66 years old, 67-80 years old]_ <br/><br/>
   
-  - _The convolutional layer extracts local features using filters (kernels) and generates feature maps._ <br/><br/>
+- _Number of Datasets_<br/>
 
-- _Pooling Layer_<br/>
+  - _Training Dataset : 10025_<br/>
+  - _Validation Dataset : 1539_<br/>
+  - _Test Dataset : 1504_<br/><br/>
 
-  - _Pooling size : (2, 2)._<br/>
-  
-  - _The pooling layer provides spatial invariance, reduces the size of feature maps to decrease computational complexity, and emphasizes abstracted features._ <br/><br/>
+- _Model Architecture_ <br/>
 
-- _Dense Layer_ <br/>
-
-  - _Number of nodes: (512 or 10)._ <br/>
-
-  - _The dense layer is a traditional neural network layer that connects all inputs and outputs. It learns abstract features and outputs probability distribution for various classes._<br/><br/>
-  
-- _Dropout Layer_ <br/>
-
-  - _The dropout layer is one of the regularization techniques used to reduce overfitting during the neural network training process._ <br/>
-
-  - _Dropout randomly deactivates some units (neurons) of the neural network during training, preventing the model from relying too heavily on specific units and improving generalization capability._<br/><br/>
-
-- _Activation function for hidden layers : ReLU Function_ <br/>
-
-  - _The ReLU function is a non-linear function that outputs 0 for negative input values and keeps the output as is for positive input values._ <br/>
-
-  - _To alleviate the issue of gradient vanishing caused by weight initialization when using ReLU activation function, the weights of the hidden layers were initialized using He initialization._<br/><br/>
-
-- _Activation function for the output layer : Softmax Function_ <br/>
-
-  - _The softmax function is commonly used as the activation function for the output layer in multi-class classification problems._ <br/>
-
-  - _The softmax function normalizes the input values to calculate the probability of belonging to each class, and the sum of probabilities for all classes is 1._<br/><br/>
-
-- _Optimization Algorithm : Adam (Adaptive Moment Estimation)_ <br/>
-
-  - _The Adam optimization algorithm, which combines the advantages of Momentum, which adjusts the learning rate considering the direction of gradients, and RMSProp, which adjusts the learning rate considering the magnitude of gradients, was used._ <br/>
-
-  - _The softmax function normalizes the input values to calculate the probability of belonging to each class, and the sum of probabilities for all classes is 1._<br/><br/>
-
-- _Loss Function : Cross-Entropy Loss Function_ <br/>
-
-  - _When using the softmax function in the output layer, the cross-entropy loss function is commonly used as the loss function._ <br/>
-
-  - _The cross-entropy loss function calculates the error only for the classes corresponding to the actual target values and updates the model in the direction of minimizing the error._<br/><br/>
-
-- _Evaluation Metric : Accuracy_ <br/>
-
-  - _Accuracy is one of the evaluation metrics used to assess the performance of a classification model._ <br/>
-
-  - _Accuracy considers the prediction as correct if it matches the actual target class and calculates it by dividing it by the total number of samples._<br/><br/>
-
-- _Batch Size & Maximum Number of Learning Iterations_ <br/>
-
-  - _In this experiment, the batch size is 128, and the model is trained by iterating up to a maximum of 100 times._<br/>
-  
-  - _The number of batch size and iterations during training affects the speed and accuracy of the model, and I, as the researcher conducting the experiment, have set the number of batch size and iterations based on my experience of tuning deep learning models._<br/><br/> <br/> 
+    <img src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/ResNet_architecture.png?raw=true" width="400px">
+    <br/><br/>
+    
+- _Batch Size : 512_  &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp; _Learning Iterations : 0.01_ &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;  _Optimization Algorithm : SGD(Stochastic Gradient Descent)_<br/><br/>
+ 
+- _Loss Function : Cross-Entropy Loss Function_ &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp; _Evaluation Metric : Accuracy_<br/><br/><br/> 
 
 ### 3. &nbsp; Data Preprocessing and Analysis <br/><br/>
 
