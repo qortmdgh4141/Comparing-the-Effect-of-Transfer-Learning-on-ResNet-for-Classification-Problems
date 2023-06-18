@@ -752,7 +752,7 @@
 
 ### 🚀 Machine Learning Model
 <p>
-  <img src="https://img.shields.io/badge/CNN-4169E1?style=flat-square?"/>
+  <img src="https://img.shields.io/badge/ResNet-2E8B57?style=flat-square?"/>
 </p> 
 
 ### 💾 Datasets used in the project
