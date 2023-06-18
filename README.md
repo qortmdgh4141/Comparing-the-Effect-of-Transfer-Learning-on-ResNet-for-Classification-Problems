@@ -756,4 +756,4 @@
 </p> 
 
 ### 💾 Datasets used in the project
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fashion-MNIST Dataset <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AI-Hub Korean Face Image ataset <br/>
