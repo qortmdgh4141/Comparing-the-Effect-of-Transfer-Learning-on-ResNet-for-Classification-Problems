@@ -302,7 +302,7 @@
   plt.show() # 그래프 출력
   ```
   
-  <img src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/img_graph.png?raw=true">
+  <img src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/bar_graph1.png?raw=true">
   
 - _**Exploratory Data Analysis (EDA)**_ <br/> 
   
@@ -775,7 +775,7 @@
 
   ```
   
-  <img src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/bar_graph.png?raw=true">
+  <img src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/bar_graph2.png?raw=true">
   
 - _Finally, I compared the accuracy values of the two models on real test data and found that the TF-ResNet model has about 2x higher accuracy than the Original-ResNet50 model. These results prove that models using transfer learning perform better when training with small datasets and a limited number of epochs._ <br/> <br/> <br/>
  
