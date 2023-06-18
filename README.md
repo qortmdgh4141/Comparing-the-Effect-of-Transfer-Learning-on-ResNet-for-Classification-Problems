@@ -1,4 +1,4 @@
-# 👕  Comparing Performance of MLP and CNN for Classification Problem
+# 👶🏻  Comparing the Effect of Transfer Learning on ResNet for Classification-Problems
 <br/>
   
 ### 1. &nbsp; Research Objective <br/><br/>
