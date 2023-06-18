@@ -302,7 +302,7 @@
   plt.show() # 그래프 출력
   ```
   
-  <img src="https://github.com/qortmdgh4141/Comparing-Performance-of-MLP-and-CNN-for-Classification-Problem/blob/main/image/image_label_graph.png?raw=true">
+  <img src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/img_graph.png?raw=true">
   
 - _**Exploratory Data Analysis (EDA)**_ <br/> 
   
@@ -352,7 +352,7 @@
   plt.show() # 그래프 출력
   ```
   
-  <img src="https://github.com/qortmdgh4141/Comparing-Performance-of-MLP-and-CNN-for-Classification-Problem/blob/main/image/image_label_graph.png?raw=true">
+  <img src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/img_graph.png?raw=true">
 
 ### 3. &nbsp; Training and Testing ResNet50 Model <br/><br/>
 
@@ -697,7 +697,7 @@
   ```
   <br/> 
 
-### 5. &nbsp; Research Results  <br/><br/>
+### 4. &nbsp; Research Results  <br/><br/>
     
 - _The objective of this study was to compare the classification performance between the Original-ResNet50 model and the TL-ResNet-50 model with transfer learning (TL) technique applied, using the AI-Hub Korean face image dataset for estimating person's age._ <br/> <br/> 
   
@@ -733,7 +733,7 @@
   plot_loss_and_accuracy(org_train_loss, trans_train_loss, org_val_acc, trans_val_acc)
   ```
   
-  <img src="https://github.com/qortmdgh4141/Comparing-Performance-of-MLP-and-CNN-for-Classification-Problem/blob/main/image/line_graph.png?raw=true">
+  <img src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/line_graph.png?raw=true">
 
 - _Analyzing the "Training Loss" graph, we observe that the Original-ResNet50 model experiences underfitting from the 2nd epoch onwards, with the loss value not decreasing gradually. In contrast, the TF-ResNet50 model consistently exhibits a gradual decrease in the loss value even after the 2nd epoch. Moreover, starting from the 1st epoch, the TF-ResNet50 model, which utilizes the pre-trained model's weights as initial values, outputs significantly lower loss values compared to the Original-ResNet50 model._ <br/>
  
@@ -775,7 +775,7 @@
 
   ```
   
-  <img src="https://github.com/qortmdgh4141/Comparing-Performance-of-MLP-and-CNN-for-Classification-Problem/blob/main/image/horizontal_bar_graph.png?raw=true">
+  <img src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/bar_graph.png?raw=true">
   
 - _Finally, I compared the accuracy values of the two models on real test data and found that the TF-ResNet model has about 2x higher accuracy than the Original-ResNet50 model. These results prove that models using transfer learning perform better when training with small datasets and a limited number of epochs._ <br/> <br/> <br/>
  
