@@ -74,6 +74,7 @@
   from torchsummary import summary
 
   from PIL import Image
+  from PIL import ImageFile
   ```
 
 - _**Data Preparation**_ <br/> 
@@ -737,6 +738,113 @@
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/bar_graph2.png?raw=true" alt="bar_graph2" width="480" >&nbsp;&nbsp;&nbsp;&nbsp;
   
 - _Finally, I compared the accuracy values of the two models on real test data and found that the TF-ResNet model has about 2x higher accuracy than the Original-ResNet50 model. These results prove that models using transfer learning perform better when training with small datasets and a limited number of epochs._ <br/> <br/> 
+  
+  ```
+  class CustomDataset(Dataset):
+      def __init__(self, image_paths, transform = None):
+          self.image_paths = image_paths
+          self.transform = transform
+
+      def __len__(self):
+          return len(self.image_paths)
+
+      def __getitem__(self, idx):
+          image_path = self.image_paths[idx]
+          img = Image.open(image_path)
+
+          channels = len(img.getbands())
+          if channels == 4:
+              img = img.convert("RGB")  # 알파 채널을 제외하고 RGB로 변환
+
+          if self.transform:
+              img = self.transform(img)
+          return img
+
+  def real_img_test(net, loader):
+      net.eval()
+
+      pred_list = []
+      for i, batch in enumerate(loader):
+          imgs = batch
+          imgs = imgs.cuda()
+
+          with torch.no_grad():
+              outputs = net(imgs)
+              _, preds = torch.max(outputs, 1)
+
+          pred_list.append(preds.item())
+
+      return pred_list
+
+  label_to_age = {
+      0: "Kids \n (0~9 years old)",
+      1: "Young Adults \n (Teens : 13~19 years old)",
+      2: "Young Adults \n (Twenties : 20~29 years old)",
+      3: "Young Adults \n (Thirties : 30~39 years old)",
+      4: "Middle-aged Adults \n (Forties : 40-49 years old)",
+      5: "Middle-aged Adults \n (Fifties : 50-59 years old)",
+      6: "Old Adults \n (Sixties : 60-69 years old)",
+      7: "Old Adults \n (Seventies and Older : 70~)"
+  }
+
+  real_test_transform = transforms.Compose([
+      transforms.Resize(128),
+      transforms.ToTensor(),
+      transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
+  ])
+
+  ImageFile.LOAD_TRUNCATED_IMAGES = True
+
+  image_paths = ["/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/img1.png", 
+                 "/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/img2.png", 
+                 "/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/img3.png",
+                 "/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/img4.png",
+                 "/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/img5.png", 
+                 "/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/img6.png",
+                 "/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/img7.png",
+                 "/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/img8.png"]
+
+  names = ["[ Chu Sarang ]", "[ Jang Wonyoung ]", "[ Me ]\n(Baek Seungho)", "[ Swings ]", "[ Lee Jungjae ]", "[ Ryu Seungryong ]", "[ Na Moonhee ]", "[ Kim Youngok ]"]
+
+  real_dataset = CustomDataset(image_paths, real_test_transform)
+  real_dataloader = torch.utils.data.DataLoader(real_dataset, batch_size=1, shuffle=False)
+
+  model_path = "/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/TL-ResNet_model.pt" # 모델 파일 경로
+
+  trans_net = torch.load(model_path)
+
+  pred_list = real_img_test(net=trans_net, loader=real_dataloader)
+  pred_ages = [label_to_age[pred] for pred in pred_list]
+  ```
+  
+  ```
+  # 이미지와 라벨 출력을 위한 함수 정의
+  def plot_images_with_labels(image_paths, names, pred_ages):
+      num_images = len(image_paths)
+      fig, axs = plt.subplots(2, 4, figsize=(16, 8))
+
+      plt.subplots_adjust(hspace=0.45)
+
+      for i, image_path in enumerate(image_paths):
+          image = Image.open(image_path)
+          label = pred_ages[i]
+
+          row = i // 4
+          col = i % 4
+          axs[row, col].imshow(image)
+          axs[row, col].set_title(f"{label}", fontsize=10)
+          axs[row, col].axis('off')
+
+          label_x = image.size[0] / 2  # 이미지의 가로 중앙으로 텍스트를 이동시킵니다.
+          label_y = image.size[1]  # 이미지의 아래에 텍스트를 표시합니다.
+          axs[row, col].text(label_x, label_y+20, names[i], fontsize=10, ha='center', va='top')  # 이미지 밑에 라벨을 추가합니다.
+
+      plt.show()
+
+  # 이미지와 라벨을 그래프에 출력
+  plot_images_with_labels(image_paths , names, pred_ages)
+  ```
+  <img src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/Korean_celebrity.png?raw=true">
   
 - _The image above shows the age estimation result of a famous Korean celebrity image using TF-ResNet50._   
   <br/><br/><br/>
