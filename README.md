@@ -518,7 +518,6 @@
   onnx.save(onnx.shape_inference.infer_shapes(onnx.load(path)), path)
   ```
   <br/> 
-### 3. &nbsp; Training and Testing ResNet50 Model <br/><br/>
 
 - _**Apply Transfer Learning and Define the "Train / Validate / Test" Function**_ <br/> 
 
