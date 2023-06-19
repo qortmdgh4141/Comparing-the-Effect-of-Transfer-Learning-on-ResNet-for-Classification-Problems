@@ -13,7 +13,7 @@
   
   - _Data quantity: Training a model with a small dataset can lead to overfitting due to lack of diversity in the data. This can be addressed through transfer learning and fine-tuning, which leverages the generalization ability of pre-trained model trained with large datasets, and generally performs well even with a small amount of data (diversity) because it performs new tasks (model training) based on the weights of pre-trained model that have trained patterns from a variety of images._ <br/><br/>
     
-- _The TL-ResNet50 model, which estimates the age of an individual based on the above hypothesis, is expected to be applied to various fields, such as predicting the age of a criminal._ <br/><br/><br/> 
+- _The TL-ResNet50 model, which estimates the age of an individual based on the above hypothesis, is expected to be applied to various fields, such as predicting the age of a criminal._ <br/><br/>
 
 ### 2. &nbsp; Key Components of the Neural Network Model and Experimental Settings  <br/><br/>
 
@@ -34,7 +34,7 @@
     
 - _Batch Size : 512_  &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp; _Learning Iterations : 0.01_ &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;  _Optimization Algorithm : SGD(Stochastic Gradient Descent)_<br/><br/>
  
-- _Loss Function : Cross-Entropy Loss Function_ &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp; _Evaluation Metric : Accuracy_<br/><br/><br/> 
+- _Loss Function : Cross-Entropy Loss Function_ &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp; _Evaluation Metric : Accuracy_<br/><br/>
 
 ### 3. &nbsp; Data Preprocessing and Analysis <br/><br/>
 
@@ -313,7 +313,7 @@
   ```
   
   <img src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/img_graph.png?raw=true">
-  <br/>
+  <br/><br/>
   
 ### 4. &nbsp; Training and Testing ResNet50 Model <br/><br/>
 
