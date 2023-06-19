@@ -313,8 +313,9 @@
   ```
   
   <img src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/img_graph.png?raw=true">
-
-### 3. &nbsp; Training and Testing ResNet50 Model <br/><br/>
+  <br/>
+  
+### 4. &nbsp; Training and Testing ResNet50 Model <br/><br/>
 
 - _**Defining the ResNet50 Model Architecture**_ <br/> 
 
