@@ -657,7 +657,7 @@
   ```
   <br/> 
 
-### 4. &nbsp; Research Results  <br/><br/>
+### 5. &nbsp; Research Results  <br/><br/>
     
 - _The objective of this study was to compare the classification performance between the Original-ResNet50 model and the TL-ResNet-50 model with transfer learning (TL) technique applied, using the AI-Hub Korean face image dataset for estimating person's age._ <br/> <br/> 
   
