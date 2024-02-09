@@ -1,40 +1,23 @@
 # 👨‍👨‍👦‍👦🏻  Comparing the Effect of Transfer Learning on ResNet for Classification Problems  
 <br/>
   
-### 1. &nbsp; Research Objective <br/><br/>
+### 1. &nbsp; Experiment Overview <br/><br/>
 
-- _In this study, I train a ResNet50 model using the AI-Hub Korean Face Image dataset to estimate the age of individuals.  In the process, I compare the classification performance of the Original ResNet50 model and the TL-ResNet50 model that applies transfer learning (TL) technique. The main hypothesis of this research is as follows:_  <br/>
+- _This experiment aims to train and validate an Artificial Intelligence model for age classification of specific individuals, utilizing a Korean facial dataset. The dataset employed is a publicly available Korean facial image dataset from AI-Hub._ <br/>
 
-  - _"Under the condition of training with a small dataset and a small number of epochs, the model using transfer learning will perform better."_ <br/><br/>
+- _Additionally, the experiment is based on one of the key models in deep learning, ResNet50. ResNet, or Residual Network, addresses the issue of gradient vanishing in deep neural networks through residual connections. This architecture facilitates efficient training of deep networks and has shown exceptional performance in image classification and recognition tasks._ <br/>
 
-- _This hypothesis is based on the following, referencing the ResNet-50 model structure from the paper “Deep Residual Learning for Image Recognition" (CVPR, 2016) and the transfer learning and fine-tuning experiments from the paper "Best Practices for Fine-tuning Visual Classifiers to New Domains" (ECCV, 2016)._  <br/>
+- _The primary focus of this experiment is to compare the performance of various state-of-the-art deep learning techniques. To this end, improvements in the ResNet architecture proposed in various papers, methods of data preprocessing, and learning strategies have been considered. While maintaining the basic structure of the ResNet50 model, various optimization techniques, including transfer learning, fine-tuning, and learning rate scheduling, will be applied in this experiment._ <br/>
 
-  - _Model complexity and number of epochs: Overfitting may occur when training complex models with many layers and parameters (e.g., ResNet-50, VGG-19), which can be avoided by training with a small number of epochs. However, training with a small number of epochs may cause another problem: underfitting due to insufficient training on the entire dataset._ <br/>
-  
-  - _Data quantity: Training a model with a small dataset can lead to overfitting due to lack of diversity in the data. This can be addressed through transfer learning and fine-tuning, which leverages the generalization ability of pre-trained model trained with large datasets, and generally performs well even with a small amount of data (diversity) because it performs new tasks (model training) based on the weights of pre-trained model that have trained patterns from a variety of images._ <br/><br/>
-    
-- _The TL-ResNet50 model, which estimates the age of an individual based on the above hypothesis, is expected to be applied to various fields, such as predicting the age of a criminal._ <br/><br/>
+- _The outcomes of this experiment are expected to contribute significantly to the advancement of facial recognition technology, with potential applications in security, marketing, and personalized service delivery._ <br/><br/>
 
-### 2. &nbsp; Key Components of the Neural Network Model and Experimental Settings  <br/><br/>
+### 2. &nbsp; Dataset Introduction <br/><br/>
 
-- _Class labels_<br/>
+- _The dataset used in this experiment is a Korean facial image dataset provided by AI HUB. This dataset comprises data collected from over 1,000 direct family members across generations, covering a wide age range from 0 to 80 years._ <br/>
 
-  - _[0-6 years old,  7-12 years old, 13-19 years old, 20-30 years old, 31-45 years old, 46-55 years old, 56-66 years old, 67-80 years old]_ <br/><br/>
-  
-- _Number of Datasets_<br/>
+- _One common approach for age prediction involves using regression models. However, in this experiment, we opted for a classification model. This strategic decision was made to enhance the model's learning efficiency and prediction accuracy. Specifically, categorizing by age groups allows the network to more clearly learn the characteristics of specific age brackets. We believe this approach will improve prediction accuracy compared to regression models._ <br/>
 
-  - _Training Dataset : 10025_<br/>
-  - _Validation Dataset : 1539_<br/>
-  - _Test Dataset : 1504_<br/><br/>
-
-- _Model Architecture_ <br/>
-
-    <img src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/ResNet_architecture.png?raw=true" width="400px">
-    <br/><br/>
-    
-- _Batch Size : 512_  &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp; _Learning Iterations : 0.01_ &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;  _Optimization Algorithm : SGD(Stochastic Gradient Descent)_<br/><br/>
- 
-- _Loss Function : Cross-Entropy Loss Function_ &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp; _Evaluation Metric : Accuracy_<br/><br/>
+- _For this purpose, additional preprocessing was performed during the dataset's labeling process. The ages were classified into eight categories based on age groups: 0-9 years, 13-19 years, 20-29 years, 30-39 years, 40-49 years, 50-59 years, 60-69 years, and 70 years and above._ <br/><br/>
 
 ### 3. &nbsp; Data Preprocessing and Analysis <br/><br/>
 
