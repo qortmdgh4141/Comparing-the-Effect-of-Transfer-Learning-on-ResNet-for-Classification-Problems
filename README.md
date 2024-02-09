@@ -17,7 +17,13 @@
 
 - _One common approach for age prediction involves using regression models. However, in this experiment, we opted for a classification model. This strategic decision was made to enhance the model's learning efficiency and prediction accuracy. Specifically, categorizing by age groups allows the network to more clearly learn the characteristics of specific age brackets. We believe this approach will improve prediction accuracy compared to regression models._ <br/>
 
-- _For this purpose, additional preprocessing was performed during the dataset's labeling process. The ages were classified into eight categories based on age groups: 0-9 years, 13-19 years, 20-29 years, 30-39 years, 40-49 years, 50-59 years, 60-69 years, and 70 years and above._ <br/><br/>
+- _For this purpose, additional preprocessing was performed during the dataset's labeling process. The ages were classified into eight categories based on age groups: 0-9 years, 13-19 years, 20-29 years, 30-39 years, 40-49 years, 50-59 years, 60-69 years, and 70 years and above._ <br/>
+
+<p align="center">
+  <img width="50%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig1.png?raw=true">
+  <br>
+  <em> Figure 1) Classified Korean Facial Data into 8 Categories</em>
+</p>
 
 ### 3. &nbsp; Data Preprocessing and Analysis <br/><br/>
 
