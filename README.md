@@ -25,6 +25,11 @@
   <em> Figure 1) Classified Korean Facial Data into 8 Categories</em>
 </p>
 
+<p align="center">
+  <img width="75%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig2.png?raw=true">
+  <br>
+  <em> Figure 1) Classified Korean Facial Data into 8 Categories</em>
+</p>
 ### 3. &nbsp; Data Preprocessing and Analysis <br/><br/>
 
 - _**Package Settings**_ <br/> 
