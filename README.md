@@ -103,7 +103,7 @@
   <em> Figure 5) Accuracy Curves for Training and Validation Datasets (2)
 </p> 
 
-### 6. &nbsp; Research Results  <br/><br/>
+### 6. &nbsp; Reflections and Future Research Directions Post-Experiment <br/><br/>
 
 - _After applying the image preprocessing techniques recommended in the "Bag of Tricks for Image Classification with Convolutional Neural Networks" paper, we observed underfitting in all four models. This led us to omit these methods in the final stages of our experiment, and it has informed my perspective that future research should meticulously adjust preprocessing techniques to suit the specific type of dataset used._ <br/>
 
@@ -123,12 +123,12 @@
   <em> Figure 7) Comparison of Loss Functions: Cross-Entropy vs Focal Loss 
 </p> 
     
-### 7. &nbsp; Research Results  <br/><br/>
+### 7. &nbsp; Additional Experiments <br/><br/>
 
 - _In our study, the TL-BCD model, which showed superior performance, validated its effectiveness during the internal validation phase. However, external validation is critical for generalization checks before deploying a model in actual applications. Therefore, we collected images of Korean celebrities not present in the AI-Hub's Korean facial dataset from the internet and carried out external validation. The results, as depicted in the figure below, confirmed that the model also exhibits excellent performance in external validation scenarios._ <br/>
 
 <p align="center">
-  <img width="75%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig8.png?raw=true">
+  <img width="90%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig8.png?raw=true">
   <br>
   <em> Figure 8) External Validation Using Images of Korean Celebrities Across Various Age Groups
 </p> 
