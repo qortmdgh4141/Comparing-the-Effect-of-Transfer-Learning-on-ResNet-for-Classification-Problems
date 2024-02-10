@@ -133,7 +133,7 @@
   <em> Figure 8) External Validation Using Images of Korean Celebrities Across Various Age Groups
 </p> 
     
-<br/><br/>
+<br/>
  
 --------------------------
 ### 💻 S/W Development Environment
