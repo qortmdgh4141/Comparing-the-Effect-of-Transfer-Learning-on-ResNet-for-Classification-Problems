@@ -110,14 +110,30 @@
 - _Unexpectedly, there was no notable performance disparity between the ResNet Original and its BCD variant architectures. We discovered that factors such as the learning rate scheduler, epoch count, dataset diversity, and initialization methods exerted a greater influence on model performance than the complexity of the model structure itself. This experience has reinforced the notion that careful attention to hyperparameter settings is just as crucial as model design._ <br/>
 
 <p align="center">
-  <img width="50%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig6.png?raw=true">
+  <img width="50%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig6_.png?raw=true">
   <br>
   <em> Figure 6) Accuracy Curves for Test Dataset
 </p> 
 
 - _In this experiment, we did not specifically address the issue of data imbalance. Should further experiments be conducted, we would consider the impact of data imbalance on model training and contemplate the use of a Focal-Loss function instead of Cross-Entropy to potentially build a more optimized model._ <br/>
 
-  <br/><br/><br/>
+<p align="center">
+  <img width="50%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig7.png?raw=true">
+  <br>
+  <em> Figure 7) Comparison of Loss Functions: Cross-Entropy vs Focal Loss 
+</p> 
+    
+### 7. &nbsp; Research Results  <br/><br/>
+
+- _In our study, the TL-BCD model, which showed superior performance, validated its effectiveness during the internal validation phase. However, external validation is critical for generalization checks before deploying a model in actual applications. Therefore, we collected images of Korean celebrities not present in the AI-Hub's Korean facial dataset from the internet and carried out external validation. The results, as depicted in the figure below, confirmed that the model also exhibits excellent performance in external validation scenarios._ <br/>
+
+<p align="center">
+  <img width="50%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig8.png?raw=true">
+  <br>
+  <em> Figure 8) Comparison of Loss Functions: Cross-Entropy vs Focal Loss 
+</p> 
+    
+<br/><br/>
  
 --------------------------
 ### 💻 S/W Development Environment
