@@ -128,7 +128,7 @@
 - _In our study, the TL-BCD model, which showed superior performance, validated its effectiveness during the internal validation phase. However, external validation is critical for generalization checks before deploying a model in actual applications. Therefore, we collected images of Korean celebrities not present in the AI-Hub's Korean facial dataset from the internet and carried out external validation. The results, as depicted in the figure below, confirmed that the model also exhibits excellent performance in external validation scenarios._ <br/>
 
 <p align="center">
-  <img width="50%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig8.png?raw=true">
+  <img width="75%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig8.png?raw=true">
   <br>
   <em> Figure 8) Comparison of Loss Functions: Cross-Entropy vs Focal Loss 
 </p> 
