@@ -23,7 +23,7 @@
   <img width="50%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig1.png?raw=true">
   <br>
   <em> Figure 1) Classified Korean Facial Data into 8 Categories</em>
-</p>
+</p> 
 
 - _The dataset used in our study has certain limitations._ <br/>
   1) _Firstly, the amount of data is quite limited for conducting sufficient training._ <br/>
@@ -33,7 +33,7 @@
   <img width="75%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig2.png?raw=true">
   <br>
   <em> Figure 2) Age-wise Distribution of Korean Facial Data Labels
-</p>
+</p> 
 
 - _To overcome these issues, I have designed experiments by considering various training strategies that have been validated in previous research._ <br/> <br/>
     
@@ -52,19 +52,27 @@
   _To enhance the performance of the ResNet architecture, "Bag of Tricks for Image Classification with Convolutional Neural Networks" (CVPR 2019) proposed modifications such as ResNet-C with a changed Input Stem structure, and ResNet-B and ResNet-D with altered structures in Stage 4 Downsampling Block. In our experiment, we trained a combined ResNet-BCD model, which integrates ResNet-B, ResNet-C, and ResNet-D structures, and then compared its performance with the original ResNet model. _ <br/>
 
 - #### Ultimately, in this experiment, we trained and analyzed four different models applying variations of the ResNet architecture and transfer learning strategies to the given dataset:
-
-Org-Model: A model based on the original ResNet-50 architecture.
-TL-Model: A model that applies transfer learning to the original ResNet-50 architecture.
-BCD-Model: A model incorporating modifications of the ResNet-B, ResNet-C, and ResNet-D architectures.
-TL-BCD-Model: A model that applies transfer learning to the combined ResNet-B, ResNet-C, and ResNet-D modified architectures.
+   - _ORG-Model: A model based on the original ResNet-50 architecture._ <br/> 
+   - _TL-Model: A model that applies transfer learning to the original ResNet-50 architecture._ <br/> 
+   - _BCD-Model: A model incorporating modifications of the ResNet-B, ResNet-C, and ResNet-D architectures._ <br/> 
+   - _TL-BCD-Model: A model that applies transfer learning to the combined ResNet-B, ResNet-C, and ResNet-D modified architectures._ <br/> 
 
 <p align="center">
   <img width="50%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/Table1.png?raw=true">
   <br>
-  <em> Figure 2) Age-wise Distribution of Korean Facial Data Labels
-</p>
+  <em> Table 1) Comparison of Training Approaches Across Different ResNet Models
+</p> 
 
+### 4. &nbsp; Experimental Settings <br/><br/>
 
+- While the referenced papers used a batch size of 256 and a learning rate of 0.1, our experiment, due to limitations in hardware (GPU) memory resources, adopted a batch size of 32. Consequently, we linearly adjusted the learning rate to 0.01. However, for models not utilizing transfer learning, a lower learning rate led to underfitting, so we set the learning rate at 0.1 for these models. Additionally, due to the limited amount of data in our dataset, overfitting became more frequent as the number of epochs increased. Therefore, we set the number of epochs to a relatively small but appropriate value.
+
+<p align="center">
+  <img width="50%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/Table2.png?raw=true">
+  <br>
+  <em> Table 2) Comparison of Training Approaches Across Different ResNet Models
+</p> 
+    
 ### 5. &nbsp; Research Results  <br/><br/>
     
 - _The objective of this study was to compare the classification performance between the Original-ResNet50 model and the TL-ResNet-50 model with transfer learning (TL) technique applied, using the AI-Hub Korean face image dataset for estimating person's age._ <br/> <br/> 
