@@ -1,7 +1,7 @@
 # 👨‍👨‍👦‍👦🏻  Comparing the Effect of Transfer Learning on ResNet for Classification Problems  
 <br/>
   
-### 1. &nbsp; Experiment Overview <br/><br/>
+### _1. &nbsp; Experiment Overview_ <br/><br/>
 
 - _This experiment aims to train and validate an Artificial Intelligence model for age classification of specific individuals, utilizing a Korean facial dataset. The dataset employed is a publicly available Korean facial image dataset from AI-Hub._ <br/>
 
@@ -11,13 +11,12 @@
 
 - _The outcomes of this experiment are expected to contribute significantly to the advancement of facial recognition technology, with potential applications in security, marketing, and personalized service delivery._ <br/><br/>
 
-### 2. &nbsp; Dataset Introduction <br/><br/>
+
+### _2. &nbsp; Dataset Introduction_ <br/><br/>
 
 - _The dataset used in this experiment is a Korean facial image dataset provided by AI HUB. This dataset comprises data collected from over 1,000 direct family members across generations, covering a wide age range from 0 to 80 years._ <br/>
 
 - _One common approach for age prediction involves using regression models. However, in this experiment, we opted for a classification model. This strategic decision was made to enhance the model's learning efficiency and prediction accuracy. Specifically, categorizing by age groups allows the network to more clearly learn the characteristics of specific age brackets. We believe this approach will improve prediction accuracy compared to regression models._ <br/>
-
-- _For this purpose, additional preprocessing was performed during the dataset's labeling process. The ages were classified into eight categories based on age groups: 0-9 years, 13-19 years, 20-29 years, 30-39 years, 40-49 years, 50-59 years, 60-69 years, and 70 years and above._ <br/>
 
 <p align="center">
   <img width="50%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig1.png?raw=true">
@@ -34,8 +33,11 @@
   <br>
   <em> Figure 2) Age-wise Distribution of Korean Facial Data Labels
 </p> 
+    
+- _For this purpose, additional preprocessing was performed during the dataset's labeling process. The ages were classified into eight categories based on age groups: 0-9 years, 13-19 years, 20-29 years, 30-39 years, 40-49 years, 50-59 years, 60-69 years, and 70 years and above._ <br/>
+  
+- _To overcome these issues, I have designed experiments by considering various training strategies that have been validated in previous research._ <br/><br/>
 
-- _To overcome these issues, I have designed experiments by considering various training strategies that have been validated in previous research._ <br/> <br/>
     
 ### 3. &nbsp; Experimental Methodology <br/><br/>
 
@@ -55,8 +57,8 @@
    - _ORG-Model: A model based on the original ResNet-50 architecture._ <br/> 
    - _TL-Model: A model that applies transfer learning to the original ResNet-50 architecture._ <br/> 
    - _BCD-Model: A model incorporating modifications of the ResNet-B, ResNet-C, and ResNet-D architectures._ <br/> 
-   - _TL-BCD-Model: A model that applies transfer learning to the combined ResNet-B, ResNet-C, and ResNet-D modified architectures._ <br/> 
-
+   - _TL-BCD-Model: A model that applies transfer learning to the combined ResNet-B, ResNet-C, and ResNet-D modified architectures._ <br/>
+   - 
 <p align="center">
   <img width="50%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/Table1.png?raw=true">
   <br>
