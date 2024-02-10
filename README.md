@@ -130,7 +130,7 @@
 <p align="center">
   <img width="75%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig8.png?raw=true">
   <br>
-  <em> Figure 8) Comparison of Loss Functions: Cross-Entropy vs Focal Loss 
+  <em> Figure 8) External Validation Using Images of Korean Celebrities Across Various Age Groups
 </p> 
     
 <br/><br/>
@@ -146,11 +146,6 @@
   <img src="https://img.shields.io/badge/PyTorch-FF9900?style=flat-square&logo=PyTorch&logoColor=EE4C2C"/>
   <img src="https://img.shields.io/badge/Numpy-013243?style=flat-square&logo=Numpy&logoColor=blue"/>
 </p>
-
-### 🚀 Machine Learning Model
-<p>
-  <img src="https://img.shields.io/badge/ResNet-2E8B57?style=flat-square?"/>
-</p> 
 
 ### 💾 Datasets used in the project
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AI Hub Dataset : Korean Face Image <br/>
