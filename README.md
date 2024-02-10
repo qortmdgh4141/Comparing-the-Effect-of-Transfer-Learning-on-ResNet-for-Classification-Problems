@@ -49,7 +49,7 @@
   _We applied the Cosine Learning Rate Decay technique, mentioned in "Bag of Tricks for Image Classification with Convolutional Neural Networks" (CVPR 2019). This technique schedules the learning rate to decrease slowly initially, almost linearly in the middle, and then slowly again towards the end. Compared to Step Decay, this approach induces faster convergence early in training and allows for finer weight adjustments later, thereby refining the entire learning process. Our experiment, comparing Step Decay and Cosine Learning Rate Decay, showed that the latter had a positive impact on the stability of the overall learning process._ <br/>
 
 - #### _Model Tweaks_
-  _To enhance the performance of the ResNet architecture, "Bag of Tricks for Image Classification with Convolutional Neural Networks" (CVPR 2019) proposed modifications such as ResNet-C with a changed Input Stem structure, and ResNet-B and ResNet-D with altered structures in Stage 4 Downsampling Block. In our experiment, we trained a combined ResNet-BCD model, which integrates ResNet-B, ResNet-C, and ResNet-D structures, and then compared its performance with the original ResNet model. _ <br/>
+  _To enhance the performance of the ResNet architecture, "Bag of Tricks for Image Classification with Convolutional Neural Networks" (CVPR 2019) proposed modifications such as ResNet-C with a changed Input Stem structure, and ResNet-B and ResNet-D with altered structures in Stage 4 Downsampling Block. In our experiment, we trained a combined ResNet-BCD model, which integrates ResNet-B, ResNet-C, and ResNet-D structures, and then compared its performance with the original ResNet model._ <br/>
 
 - #### Ultimately, in this experiment, we trained and analyzed four different models applying variations of the ResNet architecture and transfer learning strategies to the given dataset:
    - _ORG-Model: A model based on the original ResNet-50 architecture._ <br/> 
@@ -65,7 +65,11 @@
 
 ### 4. &nbsp; Experimental Settings <br/><br/>
 
-- While the referenced papers used a batch size of 256 and a learning rate of 0.1, our experiment, due to limitations in hardware (GPU) memory resources, adopted a batch size of 32. Consequently, we linearly adjusted the learning rate to 0.01. However, for models not utilizing transfer learning, a lower learning rate led to underfitting, so we set the learning rate at 0.1 for these models. Additionally, due to the limited amount of data in our dataset, overfitting became more frequent as the number of epochs increased. Therefore, we set the number of epochs to a relatively small but appropriate value.
+- _Due to hardware constraints, specifically limited GPU memory, our experiment could not accommodate the batch size of 256 and learning rate of 0.1 as used in the referenced papers._ <br/>
+
+- _We therefore adjusted our approach to a batch size of 32 and correspondingly modified the learning rate to 0.01._ <br/>
+
+- _However, for models initiated with training from scratch, we maintained the learning rate at 0.1 to prevent underfitting._ <br/>
 
 <p align="center">
   <img width="50%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/Table2.png?raw=true">
