@@ -74,199 +74,49 @@
 <p align="center">
   <img width="50%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/Table2.png?raw=true">
   <br>
-  <em> Table 2) Comparison of Training Approaches Across Different ResNet Models
+  <em> Table 2) Summary of Experimental Settings
 </p> 
     
 ### 5. &nbsp; Research Results  <br/><br/>
     
-- _The objective of this study was to compare the classification performance between the Original-ResNet50 model and the TL-ResNet-50 model with transfer learning (TL) technique applied, using the AI-Hub Korean face image dataset for estimating person's age._ <br/> <br/> 
-  
-  ```
-  def plot_loss_and_accuracy(org_train_loss, trans_train_loss, org_val_acc, trans_val_acc):
-      epochs = range(1, len(org_train_loss) + 1)
+- _Previous studies have suggested that reducing the number of epochs when training with small datasets may serve as a solution to prevent overfitting. Our experimental outcomes reflect this, as none of the four models displayed signs of overfitting._ <br/> 
 
-      plt.figure(figsize=(12, 6))
+<p align="center">
+  <img width="75%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig3.png?raw=true">
+  <br>
+  <em> Figure 3) Loss Curves for Training and Validation Datasets 
+</p> 
 
-      # Loss 그래프
-      plt.subplot(2, 2, 1)
-      plt.plot(epochs, org_train_loss, 'b', label='Orginal-ResNet')
-      plt.plot(epochs, trans_train_loss, 'r', label='TL-ResNet')
-      plt.title(f'Training Loss')
-      plt.xlabel('Epoch')
-      plt.ylabel('Loss')
-      plt.legend()
+- _However, our analysis revealed that in complex network structures, a reduced number of epochs led to another challenge: underfitting._ <br/>
 
-      # Accuracy 그래프
-      plt.subplot(2, 2, 2)
-      plt.plot(epochs, org_val_acc, 'b', label='Orginal-ResNet')
-      plt.plot(epochs, trans_val_acc, 'r', label='TL-ResNet')
-      plt.title(f'Accuracy on Validation Data')
-      plt.xlabel('Epoch')
-      plt.ylabel('Accuracy')
-      plt.legend()
+<p align="center">
+  <img width="75%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig4.png?raw=true">
+  <br>
+  <em> Figure 4) Accuracy Curves for Training and Validation Datasets (1)
+</p> 
 
-      plt.tight_layout()
+- _As a solution, integrating additional training strategies, such as fine-tuning, alongside limiting the number of epochs, has proven to be highly effective, as demonstrated by the enhanced performance of the TL-Model and TL-BCD-Model._ <br/>
 
-      plt.show()
+<p align="center">
+  <img width="75%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig5.png?raw=true">
+  <br>
+  <em> Figure 5) Accuracy Curves for Training and Validation Datasets (2)
+</p> 
 
-  # 그래프 출력
-  plot_loss_and_accuracy(org_train_loss, trans_train_loss, org_val_acc, trans_val_acc)
-  ```
-  
-  <img src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/line_graph.png?raw=true">
+### 6. &nbsp; Research Results  <br/><br/>
 
-- _Analyzing the "Training Loss" graph, we observe that the Original-ResNet50 model experiences underfitting from the 2nd epoch onwards, with the loss value not decreasing gradually. In contrast, the TF-ResNet50 model consistently exhibits a gradual decrease in the loss value even after the 2nd epoch. Moreover, starting from the 1st epoch, the TF-ResNet50 model, which utilizes the pre-trained model's weights as initial values, outputs significantly lower loss values compared to the Original-ResNet50 model._ <br/>
- 
-- _The superiority of the TF-ResNet model is also evident in the "Accuracy on Validation Data" graph, where the TF-ResNet50 model consistently achieves considerably higher accuracy values than the Original-ResNet50 model across all epochs. Notably, there is a substantial difference in accuracy values between the two models, particularly when reaching the final 10th epoch._ <br/><br/> 
+- _After applying the image preprocessing techniques recommended in the "Bag of Tricks for Image Classification with Convolutional Neural Networks" paper, we observed underfitting in all four models. This led us to omit these methods in the final stages of our experiment, and it has informed my perspective that future research should meticulously adjust preprocessing techniques to suit the specific type of dataset used._ <br/>
 
-  ```
-  def gradientbars(bars, cmap_list):
-      # cmap 가중치 설정
-      grad = np.atleast_2d(np.linspace(0,1,256)).T
-      # 플롯 영역 재설정
-      ax = bars[0].axes
-      lim = ax.get_xlim()+ax.get_ylim()
-      ax.axis(lim)
-      # 각 막대에 색 입히기
-      max = 0
-      for i, bar in enumerate(bars):
-          bar.set_facecolor("none")
-          x,y = bar.get_xy()
-          w, h = bar.get_width(), bar.get_height()
-          ax.imshow(grad, extent=[x,x+w,y,y+h], aspect="auto", cmap=cmap_list[i])
+- _Unexpectedly, there was no notable performance disparity between the ResNet Original and its BCD variant architectures. We discovered that factors such as the learning rate scheduler, epoch count, dataset diversity, and initialization methods exerted a greater influence on model performance than the complexity of the model structure itself. This experience has reinforced the notion that careful attention to hyperparameter settings is just as crucial as model design._ <br/>
 
-          plt.text(x+w/2.0+0.015, h+0.7, "{}%".format(h), fontsize=14, ha='center', va='bottom')
+<p align="center">
+  <img width="50%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/fig6.png?raw=true">
+  <br>
+  <em> Figure 6) Accuracy Curves for Test Dataset
+</p> 
 
-  _, org_test_acc = test(net=org_net, criterion=org_criterion)
-  _, trans_test_acc = test(net=trans_net, criterion=trans_criterion)
+- _In this experiment, we did not specifically address the issue of data imbalance. Should further experiments be conducted, we would consider the impact of data imbalance on model training and contemplate the use of a Focal-Loss function instead of Cross-Entropy to potentially build a more optimized model._ <br/>
 
-  df = pd.DataFrame({'Model':['Orginal-ResNet', 'TL-ResNet'], 'Accuracy': [round(org_test_acc*100) , round(trans_test_acc*100)]})
-
-  fig, ax = plt.subplots(figsize=(6,5))
-  cmap_color = ['viridis_r', 'YlOrRd']
-  gradientbars(ax.bar(df.Model, df.Accuracy), cmap_color)
-
-  plt.title("     < Performance Comparison of Models >     \n", fontsize=18)
-  plt.ylabel('Accuracy', fontsize=16)
-  plt.ylim([0, 80])
-  plt.xticks(fontsize=16)
-
-  plt.show()
-
-  ```
-  <p align="center">
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/bar_graph2.png?raw=true" alt="bar_graph2" width="480" >&nbsp;&nbsp;&nbsp;&nbsp;
-  
-- _Finally, I compared the accuracy values of the two models on real test data and found that the TF-ResNet model has about 2x higher accuracy than the Original-ResNet50 model. These results prove that models using transfer learning perform better when training with small datasets and a limited number of epochs._ <br/> <br/> 
-  
-  ```
-  class CustomDataset(Dataset):
-      def __init__(self, image_paths, transform = None):
-          self.image_paths = image_paths
-          self.transform = transform
-
-      def __len__(self):
-          return len(self.image_paths)
-
-      def __getitem__(self, idx):
-          image_path = self.image_paths[idx]
-          img = Image.open(image_path)
-
-          channels = len(img.getbands())
-          if channels == 4:
-              img = img.convert("RGB")  # 알파 채널을 제외하고 RGB로 변환
-
-          if self.transform:
-              img = self.transform(img)
-          return img
-
-  def real_img_test(net, loader):
-      net.eval()
-
-      pred_list = []
-      for i, batch in enumerate(loader):
-          imgs = batch
-          imgs = imgs.cuda()
-
-          with torch.no_grad():
-              outputs = net(imgs)
-              _, preds = torch.max(outputs, 1)
-
-          pred_list.append(preds.item())
-
-      return pred_list
-
-  label_to_age = {
-      0: "Kids \n (0~9 years old)",
-      1: "Young Adults \n (Teens : 13~19 years old)",
-      2: "Young Adults \n (Twenties : 20~29 years old)",
-      3: "Young Adults \n (Thirties : 30~39 years old)",
-      4: "Middle-aged Adults \n (Forties : 40-49 years old)",
-      5: "Middle-aged Adults \n (Fifties : 50-59 years old)",
-      6: "Old Adults \n (Sixties : 60-69 years old)",
-      7: "Old Adults \n (Seventies and Older : 70~)"
-  }
-
-  real_test_transform = transforms.Compose([
-      transforms.Resize(128),
-      transforms.ToTensor(),
-      transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
-  ])
-
-  ImageFile.LOAD_TRUNCATED_IMAGES = True
-
-  image_paths = ["/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/img1.png", 
-                 "/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/img2.png", 
-                 "/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/img3.png",
-                 "/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/img4.png",
-                 "/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/img5.png", 
-                 "/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/img6.png",
-                 "/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/img7.png",
-                 "/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/img8.png"]
-
-  names = ["[ Chu Sarang ]", "[ Jang Wonyoung ]", "[ Me ]\n(Baek Seungho)", "[ Swings ]", "[ Lee Jungjae ]", "[ Ryu Seungryong ]", "[ Na Moonhee ]", "[ Kim Youngok ]"]
-
-  real_dataset = CustomDataset(image_paths, real_test_transform)
-  real_dataloader = torch.utils.data.DataLoader(real_dataset, batch_size=1, shuffle=False)
-
-  model_path = "/content/drive/MyDrive/Colab Notebooks/Github_Repository/TL-ResNet/TL-ResNet_model.pt" # 모델 파일 경로
-
-  trans_net = torch.load(model_path)
-
-  pred_list = real_img_test(net=trans_net, loader=real_dataloader)
-  pred_ages = [label_to_age[pred] for pred in pred_list]
-  ```
-  
-  ```
-  # 이미지와 라벨 출력을 위한 함수 정의
-  def plot_images_with_labels(image_paths, names, pred_ages):
-      num_images = len(image_paths)
-      fig, axs = plt.subplots(2, 4, figsize=(16, 8))
-
-      plt.subplots_adjust(hspace=0.45)
-
-      for i, image_path in enumerate(image_paths):
-          image = Image.open(image_path)
-          label = pred_ages[i]
-
-          row = i // 4
-          col = i % 4
-          axs[row, col].imshow(image)
-          axs[row, col].set_title(f"{label}", fontsize=10)
-          axs[row, col].axis('off')
-
-          label_x = image.size[0] / 2  # 이미지의 가로 중앙으로 텍스트를 이동시킵니다.
-          label_y = image.size[1]  # 이미지의 아래에 텍스트를 표시합니다.
-          axs[row, col].text(label_x, label_y+20, names[i], fontsize=10, ha='center', va='top')  # 이미지 밑에 라벨을 추가합니다.
-
-      plt.show()
-
-  # 이미지와 라벨을 그래프에 출력
-  plot_images_with_labels(image_paths , names, pred_ages)
-  ```
-  <img src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/Korean_celebrity.png?raw=true">
-  
-- _The image above shows the age estimation result of a famous Korean celebrity image using TF-ResNet50._   
   <br/><br/><br/>
  
 --------------------------
