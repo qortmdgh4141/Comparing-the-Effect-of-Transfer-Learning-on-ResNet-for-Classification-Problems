@@ -58,7 +58,7 @@
    - _TL-Model: A model that applies transfer learning to the original ResNet-50 architecture._ <br/> 
    - _BCD-Model: A model incorporating modifications of the ResNet-B, ResNet-C, and ResNet-D architectures._ <br/> 
    - _TL-BCD-Model: A model that applies transfer learning to the combined ResNet-B, ResNet-C, and ResNet-D modified architectures._ <br/>
-   - 
+     
 <p align="center">
   <img width="50%" src="https://github.com/qortmdgh4141/Comparing-the-Effect-of-Transfer-Learning-on-ResNet-for-Classification-Problems/blob/main/image/Table1.png?raw=true">
   <br>
